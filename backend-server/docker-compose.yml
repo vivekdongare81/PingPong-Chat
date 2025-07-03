@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: PingpongChat-postgresDB
+    environment:
+      POSTGRES_DB: pingpongchatdb         # DB name
+      POSTGRES_USER: root                 # Username
+      POSTGRES_PASSWORD: root             # Password
+    ports:
+      - "8082:5432"                       
+    volumes:
+      - pgdata:/var/lib/postgresql/data   # Persist data in Docker volume
+    restart: unless-stopped               # Optional: auto-restart container
+
+volumes:
+  pgdata:
