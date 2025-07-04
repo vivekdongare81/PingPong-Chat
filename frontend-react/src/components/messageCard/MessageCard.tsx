@@ -21,8 +21,10 @@ const MessageCard = (props: MessageCardProps) => {
     const label: React.ReactElement = (
         <div className={styles.bubbleContainer}>
             {props.isGroup && !isOwnMessage && <h4 className={styles.contentContainer}>{props.message.user.fullName}:</h4>}
-            <p className={styles.contentContainer}>{props.message.content}</p>
-            <p className={styles.timeContainer}>{hours + ":" + minutes}</p>
+            <div className={styles.bubbleRow}>
+                <span className={styles.contentContainer}>{props.message.content}</span>
+                <span className={styles.timeContainer}>{hours + ":" + minutes}</span>
+            </div>
         </div>
     );
 
@@ -33,10 +35,21 @@ const MessageCard = (props: MessageCardProps) => {
     return (
         <div className={styles.messageCardInnerContainer}>
             {props.isNewDate && <div className={styles.date}>{<Chip label={dateLabel}
-                                                                    sx={{height: 'auto', width: 'auto', backgroundColor: '#faebd7'}}/>}</div>}
+                                                                    sx={{height: 'auto', width: 'auto', backgroundColor: 'rgba(0,234,255,0.10)', color: '#00eaff', fontWeight: 700}}/>}</div>}
             <div className={isOwnMessage ? styles.ownMessage : styles.othersMessage}>
                 <Chip label={label}
-                      sx={{height: 'auto', width: 'auto', backgroundColor: isOwnMessage ? '#d3fdd3' : 'white', ml: '0.75rem'}}/>
+                      sx={{
+                        height: 'auto',
+                        width: 'auto',
+                        backgroundColor: isOwnMessage ? 'rgba(0,234,255,0.18)' : 'rgba(24,28,36,0.92)',
+                        color: isOwnMessage ? '#00eaff' : '#fff',
+                        ml: '0.75rem',
+                        boxShadow: isOwnMessage ? '0 2px 8px 0 rgba(0,234,255,0.18)' : '0 2px 8px 0 rgba(0,0,0,0.18)',
+                        borderRadius: '16px',
+                        border: isOwnMessage ? '1.5px solid #00eaff' : '1.5px solid rgba(255,255,255,0.08)',
+                        backdropFilter: 'blur(4px)'
+                      }}
+                />
             </div>
         </div>
     );

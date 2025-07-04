@@ -9,6 +9,17 @@
   flex-direction: column;
   transition: background 0.3s;
   backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.outerMessagePageContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.13;
+  background: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="58" height="58" rx="16" stroke="%2300eaff" stroke-width="2" fill="none"/><circle cx="30" cy="30" r="8" stroke="%2300eaff" stroke-width="2" fill="none"/><rect x="18" y="18" width="24" height="24" rx="8" stroke="%2300eaff" stroke-width="1.5" fill="none"/></svg>') repeat;
+  pointer-events: none;
 }
 
 .messagePageHeaderContainer {
@@ -47,6 +58,8 @@
   border-radius: 0 0 20px 20px;
   transition: background 0.3s;
   color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 .messageContentInnerContainer {

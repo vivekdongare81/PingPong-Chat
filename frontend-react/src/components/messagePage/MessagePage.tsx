@@ -223,21 +223,42 @@ const MessagePage = (props: MessagePageProps) => {
                     <TextField
                         id='newMessage'
                         type='text'
-                        label='Enter new message ...'
+                        label='Type your message...'
                         size='small'
                         onKeyDown={onKeyDown}
                         fullWidth
                         value={props.newMessage}
                         onChange={onChangeNewMessage}
-                        sx={{backgroundColor: 'white'}}
+                        sx={{
+                            backgroundColor: 'rgba(24,28,36,0.92)',
+                            borderRadius: '22px',
+                            border: '2px solid #00eaff',
+                            color: '#fff',
+                            input: { color: '#fff', fontWeight: 500, letterSpacing: '0.5px' },
+                            label: { color: '#00eaff' },
+                            boxShadow: '0 2px 12px 0 rgba(0,234,255,0.10)',
+                        }}
                         InputProps={{
                             endAdornment: (
                                 <InputAdornment position='end'>
                                     <IconButton onClick={props.onSendMessage}>
-                                        <SendIcon/>
+                                        <SendIcon sx={{ color: '#00eaff' }} />
                                     </IconButton>
-                                </InputAdornment>),
-                        }}/>
+                                </InputAdornment>
+                            ),
+                            style: {
+                                color: '#fff',
+                                fontWeight: 500,
+                                letterSpacing: '0.5px',
+                                paddingLeft: 12,
+                                paddingRight: 12,
+                            },
+                        }}
+                        InputLabelProps={{
+                            shrink: true,
+                            style: { color: '#00eaff', opacity: 0.8, fontWeight: 500 },
+                        }}
+                    />
                 </div>
             </div>
         </div>

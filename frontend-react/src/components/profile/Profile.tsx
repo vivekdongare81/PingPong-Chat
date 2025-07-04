@@ -72,7 +72,12 @@ const Profile = (props: ProfileProps) => {
                 <h2>Profile</h2>
             </div>
             <div className={styles.avatarContainer}>
-                <Avatar sx={{width: '12vw', height: '12vw', fontSize: '5vw'}}>{props.initials}</Avatar>
+                <Avatar
+                    src={`https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(auth.reqUser?.email || auth.reqUser?.fullName || 'user')}`}
+                    className={styles.profileAvatar}
+                >
+                    {props.initials}
+                </Avatar>
             </div>
             <div className={styles.nameContainer}>
                 {!isEditName &&

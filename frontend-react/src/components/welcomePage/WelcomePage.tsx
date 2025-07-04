@@ -1,22 +1,20 @@
-import ForumIcon from "@mui/icons-material/Forum";
 import React from "react";
-import {UserDTO} from "../../redux/auth/AuthModel";
 import styles from './WelcomePage.module.scss';
 
-interface WelcomePageProps {
-    reqUser: UserDTO | null;
-}
-
-const WelcomePage = (props: WelcomePageProps) => {
+const WelcomePage = () => {
     return (
         <div className={styles.welcomeContainer}>
             <div className={styles.innerWelcomeContainer}>
-                <ForumIcon sx={{
-                    width: '10rem',
-                    height: '10rem',
-                }}/>
-                <h1>Welcome, {props.reqUser?.fullName}!</h1>
-                <p>Chat App designed and developed by Nicolas Justen.</p>
+                <h1 style={{ fontWeight: 800, fontSize: '2.2rem', marginBottom: '0.5rem', letterSpacing: '-1px', zIndex: 1, position: 'relative' }}>
+                    Welcome, Vivek!
+                </h1>
+                <p style={{ fontSize: '1.1rem', color: '#b0b8c1', marginBottom: '1.5rem', zIndex: 1, position: 'relative' }}>
+                    This is <span style={{ color: '#00eaff', fontWeight: 700 }}>pingpongchat</span> — your modern chat app for developers.
+                </p>
+                <p style={{ fontSize: '0.95rem', color: '#b0b8c1', zIndex: 1, position: 'relative' }}>
+                    Designed and developed by Nicolas Justen.<br/>
+                    Enhanced by Vivek.
+                </p>
             </div>
         </div>
     );

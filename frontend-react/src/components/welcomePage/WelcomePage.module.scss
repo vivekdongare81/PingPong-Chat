@@ -3,8 +3,51 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  background: transparent;
+  transition: background 0.3s;
+  position: relative;
 }
 
 .innerWelcomeContainer {
   text-align: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 600px;
+  color: #fff;
+  transition: color 0.3s;
+  position: relative;
+  overflow: visible;
+}
+
+.welcomeSvgFloating {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.welcomeSvg1 { left: -80px; top: 10px; width: 80px; }
+.welcomeSvg2 { right: -90px; top: 60px; width: 100px; }
+.welcomeSvg3 { left: 30px; bottom: -60px; width: 70px; }
+.welcomeSvg4 { right: 40px; bottom: -50px; width: 90px; }
+
+.welcomeSvg {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 16px #00eaff88);
+}
+
+.welcomeAccent {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 80px;
+  height: 80px;
+  border: 6px solid #00eaff;
+  border-radius: 18px;
+  opacity: 0.5;
+  z-index: 0;
 }

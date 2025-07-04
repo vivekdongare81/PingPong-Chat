@@ -81,15 +81,6 @@ const CreateGroupChat = (props: CreateGroupChatProps) => {
         setUserQuery("");
     };
 
-    const getSearchEndAdornment = () => {
-        return userQuery.length > 0 &&
-            <InputAdornment position='end'>
-                <IconButton onClick={onClearQuery}>
-                    <ClearIcon/>
-                </IconButton>
-            </InputAdornment>
-    };
-
     return (
         <div className={styles.createGroupChatOuterContainer}>
             <div className={styles.createGroupChatNavContainer}>
@@ -107,7 +98,43 @@ const CreateGroupChat = (props: CreateGroupChatProps) => {
                     fullWidth
                     value={name}
                     onChange={onChangeName}
-                    sx={{backgroundColor: 'white'}}/>
+                    sx={{
+                        backgroundColor: 'rgba(24,28,36,0.92)',
+                        borderRadius: '22px',
+                        color: '#fff',
+                        input: { color: '#fff', fontWeight: 500, letterSpacing: '0.5px' },
+                        label: { color: '#00eaff' },
+                        boxShadow: 'none',
+                        outline: 'none',
+                    }}
+                    InputProps={{
+                        sx: {
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                borderColor: '#00eaff',
+                                borderWidth: 2,
+                                borderRadius: '22px',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                borderColor: '#00eaff',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                borderColor: '#00eaff',
+                                borderWidth: 2.5,
+                            },
+                        },
+                        style: {
+                            color: '#fff',
+                            fontWeight: 500,
+                            letterSpacing: '0.5px',
+                            paddingLeft: 12,
+                            paddingRight: 12,
+                        },
+                    }}
+                    InputLabelProps={{
+                        shrink: true,
+                        style: { color: '#00eaff', opacity: 0.8, fontWeight: 500 },
+                    }}
+                />
             </div>
             <p className={styles.createGroupChatText}>User</p>
             <div className={styles.createGroupChatUserContainer}>
@@ -125,21 +152,57 @@ const CreateGroupChat = (props: CreateGroupChatProps) => {
                     fullWidth
                     value={userQuery}
                     onChange={onChangeQuery}
-                    sx={{backgroundColor: 'white'}}
+                    sx={{
+                        backgroundColor: 'rgba(24,28,36,0.92)',
+                        borderRadius: '22px',
+                        color: '#fff',
+                        input: { color: '#fff', fontWeight: 500, letterSpacing: '0.5px' },
+                        label: { color: '#00eaff' },
+                        boxShadow: 'none',
+                        outline: 'none',
+                    }}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position='start'>
-                                <SearchIcon/>
+                                <SearchIcon />
                             </InputAdornment>
                         ),
-                        endAdornment: getSearchEndAdornment(),
+                        endAdornment: userQuery.length > 0 && (
+                            <InputAdornment position='end'>
+                                <IconButton onClick={onClearQuery}>
+                                    <ClearIcon />
+                                </IconButton>
+                            </InputAdornment>
+                        ),
+                        sx: {
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                borderColor: '#00eaff',
+                                borderWidth: 2,
+                                borderRadius: '22px',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                borderColor: '#00eaff',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                borderColor: '#00eaff',
+                                borderWidth: 2.5,
+                            },
+                        },
+                        style: {
+                            color: '#fff',
+                            fontWeight: 500,
+                            letterSpacing: '0.5px',
+                            paddingLeft: 12,
+                            paddingRight: 12,
+                        },
                     }}
                     InputLabelProps={{
-                        shrink: focused || userQuery.length > 0,
-                        style: {marginLeft: focused || userQuery.length > 0 ? 0 : 30}
+                        shrink: true,
+                        style: { color: '#00eaff', opacity: 0.8, fontWeight: 500 },
                     }}
                     onFocus={() => setFocused(true)}
-                    onBlur={() => setFocused(false)}/>
+                    onBlur={() => setFocused(false)}
+                />
             </div>
             <div className={styles.createGroupChatUserContainer}>
                 {userQuery.length > 0 && authState.searchUser?.filter(user =>

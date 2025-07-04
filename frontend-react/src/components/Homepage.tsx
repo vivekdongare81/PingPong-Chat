@@ -303,7 +303,7 @@ const Homepage = () => {
                             </div>}
                     </div>
                     <div className={styles.messagesContainer}>
-                        {!currentChat && <WelcomePage reqUser={authState.reqUser}/>}
+                        {!currentChat && <WelcomePage />}
                         {currentChat && <MessagePage
                             chat={currentChat}
                             reqUser={authState.reqUser}

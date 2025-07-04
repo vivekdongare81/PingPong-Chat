@@ -52,6 +52,17 @@ const SignIn = () => {
         <div>
             <div className={styles.outerContainer}>
                 <div className={styles.innerContainer}>
+                    <h2 style={{
+                        color: '#00eaff',
+                        fontWeight: 800,
+                        fontSize: '2rem',
+                        letterSpacing: '-1px',
+                        marginBottom: '2rem',
+                        textAlign: 'center',
+                        textShadow: '0 2px 12px #00eaff33'
+                    }}>
+                        PingpongChat
+                    </h2>
                     <form onSubmit={onSubmit}>
                         <div>
                             <p className={styles.text}>Email</p>
@@ -86,8 +97,8 @@ const SignIn = () => {
                         </div>
                     </form>
                     <div className={styles.bottomContainer}>
-                        <p>Create new account</p>
-                        <Button variant='text' size='large' onClick={onClickCreateNewAccount}>Signup</Button>
+                        <p style={{marginBottom: '2rem'}}>Create new account</p>
+                        <Button variant='text' size='large' onClick={onClickCreateNewAccount} style={{marginTop: '0.8rem'}}>Signup</Button>
                     </div>
                 </div>
             </div>
