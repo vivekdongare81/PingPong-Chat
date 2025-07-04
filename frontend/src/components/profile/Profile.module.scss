@@ -1,0 +1,77 @@
+.outerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(24,28,36,0.92);
+  border-radius: 28px;
+  box-shadow: 0 4px 32px 0 #00eaff33, 0 0 0 2.5px #00eaff44;
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin: 2rem auto;
+  max-width: 420px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  background: rgba(0,234,255,0.12);
+  color: #00eaff;
+  border-radius: 16px 16px 0 0;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2.5px solid #00eaff;
+}
+
+.avatarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.profileAvatar {
+  border: 4px solid #00eaff;
+  box-shadow: 0 0 32px 0 #00eaff88, 0 0 0 6px #181c24;
+  width: 140px !important;
+  height: 140px !important;
+  font-size: 4rem !important;
+  background: #181c24 !important;
+  color: #fff !important;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.nameDistance {
+  padding: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.innerNameStaticContainer, .innerNameDynamicContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.infoContainer {
+  padding: 0.75rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+.infoText {
+  color: #b0b8c1;
+  font-size: 1.05rem;
+  padding: 0.5rem 0;
+}

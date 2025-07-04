@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw;
+  min-height: 100vh;
+  background: #111215;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.global-bg {
+  position: fixed;
+  z-index: 0;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.global-bg-stripes {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 20vw
+  );
+}
+
+.global-bg-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18vw;
+  font-weight: 900;
+  color: #fff;
+  opacity: 0.03;
+  letter-spacing: -1vw;
+  user-select: none;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.global-bg-shape {
+  position: absolute;
+  width: 60px; height: 60px;
+  border: 6px solid #00eaff;
+  border-radius: 12px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.global-bg-shape1 { left: 8vw; top: 20vh; }
+.global-bg-shape2 { right: 12vw; top: 10vh; }
+.global-bg-shape3 { left: 20vw; bottom: 12vh; }
+.global-bg-shape4 { right: 18vw; bottom: 18vh; }

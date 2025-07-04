@@ -1,0 +1,110 @@
+.welcomeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: transparent;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.innerWelcomeContainer {
+  text-align: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 600px;
+  color: #fff;
+  transition: color 0.3s;
+  position: relative;
+  overflow: visible;
+}
+
+.welcomeSvgFloating {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.welcomeSvg1 { left: -80px; top: 10px; width: 80px; }
+.welcomeSvg2 { right: -90px; top: 60px; width: 100px; }
+.welcomeSvg3 { left: 30px; bottom: -60px; width: 70px; }
+.welcomeSvg4 { right: 40px; bottom: -50px; width: 90px; }
+
+.welcomeSvg {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 16px #00eaff88);
+}
+
+.welcomeAccent {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 80px;
+  height: 80px;
+  border: 6px solid #00eaff;
+  border-radius: 18px;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.iconRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.welcomeIcon {
+  filter: drop-shadow(0 0 12px #00eaff55);
+  transition: transform 0.2s;
+}
+.welcomeIcon:hover {
+  transform: scale(1.12) rotate(-8deg);
+  filter: drop-shadow(0 0 18px #00eaffcc);
+}
+
+.welcomeTitle {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.6rem;
+  letter-spacing: -1.5px;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 2px 16px #00eaff22;
+  z-index: 1;
+  position: relative;
+}
+
+.welcomeSubtitle {
+  font-size: 1.18rem;
+  color: #b0eaff;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+  position: relative;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.brand {
+  color: #00eaff;
+  font-weight: 800;
+  font-size: 1.22em;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 12px #00eaff44;
+}
+
+.welcomeCredit {
+  font-size: 1.02rem;
+  color: #b0b8c1;
+  z-index: 1;
+  position: relative;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
