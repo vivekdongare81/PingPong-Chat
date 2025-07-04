@@ -1,17 +1,28 @@
 import React from "react";
 import styles from './WelcomePage.module.scss';
 
+const ChatSVG = () => (
+  <svg className={styles.welcomeIcon} width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#00eaff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+);
+const CodeSVG = () => (
+  <svg className={styles.welcomeIcon} width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#a259ff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+);
+
 const WelcomePage = () => {
     return (
         <div className={styles.welcomeContainer}>
             <div className={styles.innerWelcomeContainer}>
-                <h1 style={{ fontWeight: 800, fontSize: '2.2rem', marginBottom: '0.5rem', letterSpacing: '-1px', zIndex: 1, position: 'relative' }}>
+                <div className={styles.iconRow}>
+                  <ChatSVG />
+                  <CodeSVG />
+                </div>
+                <h1 className={styles.welcomeTitle}>
                     Welcome, Vivek!
                 </h1>
-                <p style={{ fontSize: '1.1rem', color: '#b0b8c1', marginBottom: '1.5rem', zIndex: 1, position: 'relative' }}>
-                    This is <span style={{ color: '#00eaff', fontWeight: 700 }}>pingpongchat</span> — your modern chat app for developers.
+                <p className={styles.welcomeSubtitle}>
+                    This is <span className={styles.brand}>pingpongchat</span> — your modern chat app for developers.
                 </p>
-                <p style={{ fontSize: '0.95rem', color: '#b0b8c1', zIndex: 1, position: 'relative' }}>
+                <p className={styles.welcomeCredit}>
                     Designed and developed by Nicolas Justen.<br/>
                     Enhanced by Vivek.
                 </p>

@@ -225,18 +225,17 @@ const MessagePage = (props: MessagePageProps) => {
                         type='text'
                         label='Type your message...'
                         size='small'
-                        onKeyDown={onKeyDown}
                         fullWidth
                         value={props.newMessage}
                         onChange={onChangeNewMessage}
                         sx={{
                             backgroundColor: 'rgba(24,28,36,0.92)',
                             borderRadius: '22px',
-                            border: '2px solid #00eaff',
                             color: '#fff',
                             input: { color: '#fff', fontWeight: 500, letterSpacing: '0.5px' },
                             label: { color: '#00eaff' },
-                            boxShadow: '0 2px 12px 0 rgba(0,234,255,0.10)',
+                            boxShadow: 'none',
+                            outline: 'none',
                         }}
                         InputProps={{
                             endAdornment: (
@@ -246,6 +245,20 @@ const MessagePage = (props: MessagePageProps) => {
                                     </IconButton>
                                 </InputAdornment>
                             ),
+                            sx: {
+                                '& .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: '#00eaff',
+                                    borderWidth: 2,
+                                    borderRadius: '22px',
+                                },
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: '#00eaff',
+                                },
+                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: '#00eaff',
+                                    borderWidth: 2.5,
+                                },
+                            },
                             style: {
                                 color: '#fff',
                                 fontWeight: 500,
@@ -258,6 +271,7 @@ const MessagePage = (props: MessagePageProps) => {
                             shrink: true,
                             style: { color: '#00eaff', opacity: 0.8, fontWeight: 500 },
                         }}
+                        onKeyDown={onKeyDown}
                     />
                 </div>
             </div>
